@@ -7,6 +7,7 @@ opt.hidden = true                   -- Enable background buffers
 opt.autoindent = true               -- Copy indent from curretn line when staring a new line
 opt.ignorecase = true               -- Ignore case
 opt.joinspaces = false              -- No double spaces with join
+opt.number = true                   -- Show line number
 opt.relativenumber = true           -- Relative line numbers
 opt.clipboard = 'unnamedplus'       -- Using system clipboard
 opt.hidden = true                   -- Removes the "No write since last change (add ! to overwrite)

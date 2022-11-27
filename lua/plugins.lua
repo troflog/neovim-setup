@@ -17,37 +17,39 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(
 {function(use)
         
-      -- packer can manage itself
-      use 'wbthomason/packer.nvim'
+    -- packer can manage itself
+    use 'wbthomason/packer.nvim'
 
-      -- Tag viewer
-      use 'preservim/tagbar'
+    -- Tag viewer
+    use 'preservim/tagbar'
 
-      -- Color schema
-      use 'folke/tokyonight.nvim'
+    -- Color schema
+    use 'folke/tokyonight.nvim'
+    --LSP 
+
+    --filesystem naviation
+    use {                                              
+          'kyazdani42/nvim-tree.lua',
+          requires = { 'kyazdani42/nvim-web-devicons'}, 
+          config = function() require('plugins.nvimtree') end
+        }
+
+    --Toggle terminal
+    use {
+          "akinsho/toggleterm.nvim",tag = '*',
+          config = function() require('plugins.toggleterm') end
+        }
+
+    -- automatically set up your configuration after cloning packer.nvim
+    if packer_bootstrap then
+      require('packer').sync()
       
-      --filesystem naviation
-      use {                                              
-        'kyazdani42/nvim-tree.lua',
-        requires = { 'kyazdani42/nvim-web-devicons'}, 
-        config = function() require('plugins.nvimtree') end
-      }
-
-      --Toggle terminal
-      use {"akinsho/toggleterm.nvim",tag = '*',
-            config = [[require('plugins.toggleterm')]] 
-          }
-
-      -- automatically set up your configuration after cloning packer.nvim
-      if packer_bootstrap then
-        require('packer').sync()
-        
-      end
+    end
  end,
  config = {
               display = {open_fn = require('packer.util').float}
- 	       }
-  }
+ 	      }
+}
 )
 
 
