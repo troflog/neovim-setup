@@ -1,14 +1,14 @@
 -- NVIM tree
-
+print('Hello from nvim tree')
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- shortcut for nvim-tree 
 vim.keymap.set("n","<C-n>", ":NvimTreeToggle<CR>",{noremap = true})
-
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
+--Setup
 require('nvim-tree').setup({
   -- Allow using gx
   disable_netrw = false,
@@ -24,4 +24,3 @@ vim.api.nvim_create_autocmd("BufEnter", {
     end
   end
 })
-print('hei der')

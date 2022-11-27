@@ -1,3 +1,4 @@
+print('hello from toggletrem')
 require("toggleterm").setup({
       -- size can be a number or function which is passed the current terminal
       size = function(term)
@@ -10,3 +11,4 @@ require("toggleterm").setup({
       open_mapping = "<C-p>"
     }
 )
+

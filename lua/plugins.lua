@@ -1,5 +1,8 @@
 --INSTALL PACKAGES WITH PACKER
 
+--Note: Every time a change to plugin allready installed, due PackerSync
+--      in order update the change
+
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -20,25 +23,32 @@ return require('packer').startup(
     -- packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    --LSP server 
+    use {
+        'neovim/nvim-lspconfig',
+        config = function() require('plugins.lspconfig') end
+    }
+
     -- Tag viewer
     use 'preservim/tagbar'
 
     -- Color schema
     use 'folke/tokyonight.nvim'
-    --LSP 
+
 
     --filesystem naviation
     use {                                              
           'kyazdani42/nvim-tree.lua',
           requires = { 'kyazdani42/nvim-web-devicons'}, 
           config = function() require('plugins.nvimtree') end
-        }
+    }
 
     --Toggle terminal
     use {
           "akinsho/toggleterm.nvim",tag = '*',
           config = function() require('plugins.toggleterm') end
-        }
+    }
+
 
     -- automatically set up your configuration after cloning packer.nvim
     if packer_bootstrap then
