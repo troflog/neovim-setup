@@ -44,6 +44,12 @@ return require('packer').startup(
     -- Color schema
     use 'folke/tokyonight.nvim'
 
+    --Telescope
+    use {
+      'nvim-telescope/telescope.nvim', tag = '0.1.0',
+      requires = {{'nvim-lua/plenary.nvim'}},
+      config = function() require('plugins.telescope') end
+    }
 
     --filesystem naviation
     use {                                              
