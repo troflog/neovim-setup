@@ -28,6 +28,11 @@ vim.keymap.set("n","<C-j>", "<C-w>j",options)
 vim.keymap.set("n","<C-k>", "<C-w>k",options)
 vim.keymap.set("n","<C-l>", "<C-w>l",options)
 
+-- vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]],options ) --wincmd is same as C-w
+-- vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]],options )
+-- vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]],options )
+-- vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]],options )
+
 -- Resize with arrows
 vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", options)
 vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", options)
