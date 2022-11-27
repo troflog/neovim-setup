@@ -29,6 +29,15 @@ return require('packer').startup(
         config = function() require('plugins.lspconfig') end
     }
 
+    -- Commenter
+    use {
+       'terrortylor/nvim-comment',
+       config = function() require('nvim_comment').setup() end 
+
+    }
+    -- git commands
+    use 'tpope/vim-fugitive'
+
     -- Tag viewer
     use 'preservim/tagbar'
 
