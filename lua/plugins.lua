@@ -1,4 +1,4 @@
---INSTALL PACKAGES WITH PACKER
+--INSTALL PACKAGES WITH PACKE
 
 --Note: Every time a change to plugin allready installed, due PackerSync
 --      in order update the change
@@ -29,12 +29,13 @@ return require('packer').startup(
         config = function() require('plugins.lspconfig') end
     }
 
+
     -- Commenter
     use {
        'terrortylor/nvim-comment',
        config = function() require('nvim_comment').setup() end 
-
     }
+    
     -- git commands
     use 'tpope/vim-fugitive'
 
@@ -46,12 +47,25 @@ return require('packer').startup(
 
     --Telescope
     use {
-      'nvim-telescope/telescope.nvim', tag = '0.1.0',
+      'nvim-telescope/telescope.nvim', 
       requires = {{'nvim-lua/plenary.nvim'}},
       config = function() require('plugins.telescope') end
     }
 
-    --filesystem naviation
+    -- Neoclip
+    use {
+      "AckslD/nvim-neoclip.lua",
+      requires = {
+        {'kkharji/sqlite.lua', module = 'sqlite'},
+        -- you'll need at least one of these
+        -- {'nvim-telescope/telescope.nvim'},
+        -- {'ibhagwan/fzf-lua'},
+      },
+      config = function()
+        require('plugins.neoclip')
+      end,
+    }
+    --Filesystem naviation
     use {                                              
           'kyazdani42/nvim-tree.lua',
           requires = { 'kyazdani42/nvim-web-devicons'}, 
@@ -63,9 +77,16 @@ return require('packer').startup(
           "akinsho/toggleterm.nvim",tag = '*',
           config = function() require('plugins.toggleterm') end
     }
+    use {
+        'dhruvmanila/telescope-bookmarks.nvim',
+        tag = '*',
+        -- Uncomment if the selected browser is Firefox, Waterfox or buku
+        -- requires = {
+        --   'kkharji/sqlite.lua',
+        -- }
+    }
 
-
-    -- automatically set up your configuration after cloning packer.nvim
+    -- Automatically set up your configuration after cloning packer.nvim
     if packer_bootstrap then
       require('packer').sync()
       
