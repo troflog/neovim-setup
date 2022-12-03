@@ -5,7 +5,7 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- shortcut for nvim-tree 
-vim.keymap.set("n","<C-n>", ":NvimTreeToggle<CR>",{noremap = true})
+vim.keymap.set("n","<C-b>", ":NvimTreeToggle<CR>",{noremap = true})
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 --Setup
