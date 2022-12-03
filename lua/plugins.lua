@@ -72,14 +72,20 @@ return require('packer').startup(
           config = function() require('plugins.nvimtree') end
     }
 
+    --Open browser
+    use 'tyru/open-browser.vim'
+
     --Toggle terminal
     use {
           "akinsho/toggleterm.nvim",tag = '*',
           config = function() require('plugins.toggleterm') end
     }
+    
+    --Telescope bookmark plugin
     use {
         'dhruvmanila/telescope-bookmarks.nvim',
         tag = '*',
+        config = function() require('plugins.bookmarks') end
         -- Uncomment if the selected browser is Firefox, Waterfox or buku
         -- requires = {
         --   'kkharji/sqlite.lua',

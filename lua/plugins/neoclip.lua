@@ -48,3 +48,7 @@ require('neoclip').setup({
     })
 --Keymap for this extiosn
 vim.keymap.set('n', '<leader>ft',":Telescope neoclip<CR>", options)
+
+--Load extension 
+require('telescope').load_extension('neoclip')
+

@@ -103,6 +103,11 @@ _G.packer_plugins = {
     path = "/home/tbf/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["open-browser.vim"] = {
+    loaded = true,
+    path = "/home/tbf/.local/share/nvim/site/pack/packer/start/open-browser.vim",
+    url = "https://github.com/tyru/open-browser.vim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/tbf/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -126,6 +131,7 @@ _G.packer_plugins = {
     url = "https://github.com/preservim/tagbar"
   },
   ["telescope-bookmarks.nvim"] = {
+    config = { "\27LJ\2\0021\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\22plugins.bookmarks\frequire\0" },
     loaded = true,
     path = "/home/tbf/.local/share/nvim/site/pack/packer/start/telescope-bookmarks.nvim",
     url = "https://github.com/dhruvmanila/telescope-bookmarks.nvim"
@@ -203,6 +209,10 @@ time([[Config for nvim-comment]], false)
 time([[Config for telescope.nvim]], true)
 try_loadstring("\27LJ\2\0021\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\22plugins.telescope\frequire\0", "config", "telescope.nvim")
 time([[Config for telescope.nvim]], false)
+-- Config for: telescope-bookmarks.nvim
+time([[Config for telescope-bookmarks.nvim]], true)
+try_loadstring("\27LJ\2\0021\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\22plugins.bookmarks\frequire\0", "config", "telescope-bookmarks.nvim")
+time([[Config for telescope-bookmarks.nvim]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\0022\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\23plugins.toggleterm\frequire\0", "config", "toggleterm.nvim")

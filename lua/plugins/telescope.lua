@@ -14,11 +14,5 @@ require("telescope").setup({
                 ["<esc>"] = actions.close, --close buffer with esc
             },
         },
-    },
+    }
 })
---  Extensions --
-
---Load bookmark extension
-
-require('telescope').load_extension('bookmarks')
-require('telescope').load_extension('neoclip')
