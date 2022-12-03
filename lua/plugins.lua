@@ -81,16 +81,6 @@ return require('packer').startup(
           config = function() require('plugins.toggleterm') end
     }
     
-    --Telescope bookmark plugin
-    use {
-        'dhruvmanila/telescope-bookmarks.nvim',
-        tag = '*',
-        config = function() require('plugins.bookmarks') end
-        -- Uncomment if the selected browser is Firefox, Waterfox or buku
-        -- requires = {
-        --   'kkharji/sqlite.lua',
-        -- }
-    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     if packer_bootstrap then
