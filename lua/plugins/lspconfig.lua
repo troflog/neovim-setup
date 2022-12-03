@@ -32,8 +32,14 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
---Setting up python
+--Setting up python and connect cmp(autocomplete)
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('lspconfig')['pyright'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
+    capabilities = capabilities
+
 }
+
+ -- Set up lspconfig.
+-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.

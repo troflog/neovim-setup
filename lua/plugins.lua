@@ -29,13 +29,31 @@ return require('packer').startup(
         config = function() require('plugins.lspconfig') end
     }
 
-
+    use({
+        "hrsh7th/nvim-cmp",
+        -- Sources for nvim-cmp
+        requires = {
+          "hrsh7th/cmp-nvim-lsp",
+          "hrsh7th/cmp-buffer",
+          "hrsh7th/cmp-path",
+          "hrsh7th/cmp-nvim-lua",
+          "hrsh7th/cmp-cmdline",
+          "saadparwaiz1/cmp_luasnip",
+       },
+        config = function() require('plugins.cmp') end,
+      })
+      
     -- Commenter
     use {
        'terrortylor/nvim-comment',
        config = function() require('nvim_comment').setup() end 
     }
-    
+   
+    -- Luasnip
+    use {
+        "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*",
+        config = function() require('plugins.luasnip') end
+    }
     -- git commands
     use 'tpope/vim-fugitive'
 
