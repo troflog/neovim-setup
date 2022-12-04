@@ -19,11 +19,11 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(
 {function(use)
-        
+
     -- packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    --LSP server 
+    --LSP server
     use {
         'neovim/nvim-lspconfig',
         config = function() require('plugins.lspconfig') end
@@ -42,13 +42,13 @@ return require('packer').startup(
        },
         config = function() require('plugins.cmp') end,
       })
-      
+
     -- Commenter
     use {
        'terrortylor/nvim-comment',
-       config = function() require('nvim_comment').setup() end 
+       config = function() require('nvim_comment').setup() end
     }
-   
+
     -- Luasnip
     use {
         "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*",
@@ -65,7 +65,7 @@ return require('packer').startup(
 
     --Telescope
     use {
-      'nvim-telescope/telescope.nvim', 
+      'nvim-telescope/telescope.nvim',
       requires = {{'nvim-lua/plenary.nvim'}},
       config = function() require('plugins.telescope') end
     }
@@ -84,9 +84,9 @@ return require('packer').startup(
       end,
     }
     --Filesystem naviation
-    use {                                              
+    use {
           'kyazdani42/nvim-tree.lua',
-          requires = { 'kyazdani42/nvim-web-devicons'}, 
+          requires = { 'kyazdani42/nvim-web-devicons'},
           config = function() require('plugins.nvimtree') end
     }
 
@@ -98,12 +98,12 @@ return require('packer').startup(
           "akinsho/toggleterm.nvim",tag = '*',
           config = function() require('plugins.toggleterm') end
     }
-    
+
 
     -- Automatically set up your configuration after cloning packer.nvim
     if packer_bootstrap then
       require('packer').sync()
-      
+
     end
  end,
  config = {

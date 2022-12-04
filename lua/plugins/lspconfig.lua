@@ -41,10 +41,14 @@ require('lspconfig')['pyright'].setup{
 
 --Setting up Lua language server
 --Using Sumneko Lua (https://github.com/sumneko/lua-language-server)
-require('lspconfig')['sumneko_lua'].setup{
-    
-    
-
+require('lspconfig')['sumneko_lua'].setup{ -- ... other configs
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
 }
  -- Set up lspconfig.
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
