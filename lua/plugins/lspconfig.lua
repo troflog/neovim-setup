@@ -3,6 +3,7 @@
 -- This keymaps will only be aviable in a buffer which has the language 
 -- server attached
 print('lspconfig is loaded')
+-- The function on_attach will only be run when the language server starts
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -32,14 +33,18 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
---Setting up python and connect cmp(autocomplete)
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+--Setting up Python
 require('lspconfig')['pyright'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
-    capabilities = capabilities
-
 }
 
+--Setting up Lua language server
+--Using Sumneko Lua (https://github.com/sumneko/lua-language-server)
+require('lspconfig')['sumneko_lua'].setup{
+    
+    
+
+}
  -- Set up lspconfig.
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.

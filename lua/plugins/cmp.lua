@@ -24,7 +24,10 @@ cmp.setup({
       -- documentation = cmp.config.window.bordered(),
     },
     mapping ={
+
+        -- Close autocomplete
         ['<C-c>'] = cmp.mapping.close(),
+        
         -- Scroll documentation
         ['<C-d>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -33,6 +36,7 @@ cmp.setup({
           behavior = cmp.ConfirmBehavior.Replace,
           select = false,
         }),
+
         --Go through alternatives forward
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
@@ -45,6 +49,7 @@ cmp.setup({
             fallback()
           end
         end, { "i", "s" }),
+
         --Go through alternatives backward
         ["<S-Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
@@ -66,3 +71,8 @@ cmp.setup({
     }
 })
 
+--Attach lsp server to cmp
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+require('lspconfig')['pyright'].setup{
+    capabilities = capabilities
+}
