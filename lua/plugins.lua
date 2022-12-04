@@ -52,7 +52,7 @@ return require('packer').startup(
     -- Luasnip
     use {
         "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*",
-        config = function() require('plugins.luasnip') end
+        config = function() require('plugins.snippets') end
     }
     -- git commands
     use 'tpope/vim-fugitive'
