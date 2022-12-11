@@ -43,7 +43,7 @@ require('lspconfig')['pyright'].setup{
 --Using Sumneko Lua (https://github.com/sumneko/lua-language-server)
 local user = vim.fn.expand('$USER')
 local sumneko_root_path = "/home/" .. user .. "/lua-language-server"
-local sumneko_binary = "/home/" .. user .. "/lua-language-server/bin/lua-language-server"
+local sumneko_binary =    "/home/" .. user .. "/lua-language-server/bin/lua-language-server"
 require('lspconfig')['sumneko_lua'].setup{ -- ... other cnfigs
     on_attach = on_attach,
     cmd = {sumneko_binary,"-E",sumneko_root_path .. "/main.lua"},
@@ -55,5 +55,3 @@ require('lspconfig')['sumneko_lua'].setup{ -- ... other cnfigs
         }
     }
 }
- -- Set up lspconfig.
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.

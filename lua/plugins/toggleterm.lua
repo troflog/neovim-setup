@@ -26,3 +26,15 @@ end
 -- This set the keymaps for the current terminal only
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
+--Keymaps for Toggleterm
+--
+-- ToggleTermSendCurrentLine <T_ID>: sends the whole line where you are standing with your cursor
+-- ToggleTermSendVisualSelection <T_ID>: sends only the visually selected text
+--                                      (this can be a block of text or
+--                                       a selection in a single line)
+-- ToggleTermSendVisualLines <T_ID>: sends all the (whole) lines in your visual selection
+
+local options = {noremap = true}
+vim.keymap.set('n', '<leader>tl',':ToggleTermSendCurrentLine <CR>',options)
+vim.keymap.set('v', '<leader>tv',':ToggleTermSendVisualSelection<CR>',options)
+vim.keymap.set('v', '<leader>tV',':ToggleTermSendVisualLines<CR>',options)
