@@ -1,3 +1,4 @@
+print('Neoclip loaded')
 require('neoclip').setup({
       history = 1000,
       enable_persistent_history = true,
@@ -37,12 +38,6 @@ require('neoclip').setup({
             delete = 'd',
             custom = {},
           },
-        },
-        fzf = {
-          select = 'default',
-          paste = 'ctrl-p',
-          paste_behind = 'ctrl-k',
-          custom = {},
         },
       },
     })

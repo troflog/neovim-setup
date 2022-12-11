@@ -15,8 +15,8 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts) --Jump to definition
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts) --Jump to implementation
-  vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+  vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
+  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
   --vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   --vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
   --vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
@@ -41,7 +41,12 @@ require('lspconfig')['pyright'].setup{
 
 --Setting up Lua language server
 --Using Sumneko Lua (https://github.com/sumneko/lua-language-server)
-require('lspconfig')['sumneko_lua'].setup{ -- ... other configs
+local user = vim.fn.expand('$USER')
+local sumneko_root_path = "/home/" .. user .. "/lua-language-server"
+local sumneko_binary = "/home/" .. user .. "/lua-language-server/bin/lua-language-server"
+require('lspconfig')['sumneko_lua'].setup{ -- ... other cnfigs
+    on_attach = on_attach,
+    cmd = {sumneko_binary,"-E",sumneko_root_path .. "/main.lua"},
     settings = {
         Lua = {
             diagnostics = {

@@ -70,19 +70,32 @@ return require('packer').startup(
       config = function() require('plugins.telescope') end
     }
 
-    -- Neoclip
     use {
       "AckslD/nvim-neoclip.lua",
       requires = {
-        {'kkharji/sqlite.lua', module = 'sqlite'},
-        -- you'll need at least one of these
-        -- {'nvim-telescope/telescope.nvim'},
+        -- you'requires = {
+        {'kkharji/sqlite.lua', module = 'sqlite'}
+       -- {'nvim-telescope/telescope.nvim'},
         -- {'ibhagwan/fzf-lua'},
       },
       config = function()
         require('plugins.neoclip')
-      end,
+      end
     }
+    -- Neoclip
+    -- use {
+    --   "AckslD/nvim-neoclip.lua",
+    --   requires = {
+    --     {'kkharji/sqlite.lua', module = 'sqlite'},
+    --     -- you'll need at least one of these
+    --     -- {'nvim-telescope/telescope.nvim'},
+    --     -- {'ibhagwan/fzf-lua'},
+    --   },
+    --   config = function()
+    --     require('plugins.neoclip')
+    --   end,
+    -- }
+
     --Filesystem naviation
     use {
           'kyazdani42/nvim-tree.lua',

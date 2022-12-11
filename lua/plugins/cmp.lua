@@ -73,6 +73,7 @@ cmp.setup({
 
 --Attach lsp server to cmp
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+--Python
 require('lspconfig')['pyright'].setup{
     capabilities = capabilities
 }
