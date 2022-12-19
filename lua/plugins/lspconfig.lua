@@ -39,19 +39,29 @@ require('lspconfig')['pyright'].setup{
     flags = lsp_flags,
 }
 
---Setting up Lua language server
---Using Sumneko Lua (https://github.com/sumneko/lua-language-server)
-local user = vim.fn.expand('$USER')
-local sumneko_root_path = "/home/" .. user .. "/lua-language-server"
-local sumneko_binary =    "/home/" .. user .. "/lua-language-server/bin/lua-language-server"
-require('lspconfig')['sumneko_lua'].setup{ -- ... other cnfigs
-    on_attach = on_attach,
-    cmd = {sumneko_binary,"-E",sumneko_root_path .. "/main.lua"},
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
+
+
+--Setting up lua
+require'lspconfig'.sumneko_lua.setup {
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+        checkThirdParty = false,
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
 }
