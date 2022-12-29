@@ -44,15 +44,23 @@ return require('packer').startup(
             local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
             ts_update()
         end,
+        config = function() require('plugins.treesitter') end,
     })
 
-    -- Debugger
-    use ({
-        'mfussenegger/nvim-dap',
-        require = {
-            'mfussenegger/nvim-dap-python'
-        }
-    })
+    -- Debugging
+    use {
+          "mfussenegger/nvim-dap",
+          requires = {
+            "theHamsta/nvim-dap-virtual-text",
+            "rcarriga/nvim-dap-ui",
+          },
+          config = function()
+            require("config.dap").setup()
+          end,
+    }
+    -- Debug plugin for python
+
+
     -- Commenter
     use {
        'terrortylor/nvim-comment',
