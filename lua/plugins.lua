@@ -28,21 +28,31 @@ return require('packer').startup(
         'neovim/nvim-lspconfig',
         config = function() require('plugins.lspconfig') end
     }
-
+    --Autocomplete
     use({
         "hrsh7th/nvim-cmp",
         -- Sources for nvim-cmp
-        requires = {
-          "hrsh7th/cmp-nvim-lsp",
-          "hrsh7th/cmp-buffer",
-          "hrsh7th/cmp-path",
-          "hrsh7th/cmp-nvim-lua",
-          "hrsh7th/cmp-cmdline",
-          "saadparwaiz1/cmp_luasnip",
-       },
+        requires = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path", "hrsh7th/cmp-nvim-lua", "hrsh7th/cmp-cmdline", "saadparwaiz1/cmp_luasnip",
+        },
         config = function() require('plugins.cmp') end,
       })
 
+    -- Treesitter
+    use ({
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,
+    })
+
+    -- Debugger
+    use ({
+        'mfussenegger/nvim-dap',
+        require = {
+            'mfussenegger/nvim-dap-python'
+        }
+    })
     -- Commenter
     use {
        'terrortylor/nvim-comment',
