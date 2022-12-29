@@ -12,4 +12,8 @@ opt.relativenumber = true           -- Relative line numbers
 opt.clipboard = 'unnamedplus'       -- Using system clipboard
 opt.hidden = true                   -- Removes the "No write since last change (add ! to overwrite)
 opt.splitbelow = true
---opt.syntax = true                   -- Syntax highlighting
+--opt.syntax = true                 -- Syntax highlighting
+
+--Local to window options
+vim.wo.wrap = false                 -- Turn off line wrapping
+
