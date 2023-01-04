@@ -55,11 +55,16 @@ return require('packer').startup(
             "rcarriga/nvim-dap-ui",
           },
           config = function()
-            require("config.dap").setup()
+            require("plugins.dap").setup()
           end,
     }
     -- Debug plugin for python
-
+    -- use {
+    --    'mfussenegger/nvim-dap-python',
+    --    config = function()
+    --        require('plugins.dap.dap-python')
+    --    end
+    -- }
 
     -- Commenter
     use {
