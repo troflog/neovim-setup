@@ -47,24 +47,33 @@ return require('packer').startup(
         config = function() require('plugins.treesitter') end,
     })
 
+    --Telescope
+    use {
+      'nvim-telescope/telescope.nvim',
+      requires = {{'nvim-lua/plenary.nvim'}},
+      config = function() require('plugins.telescope') end
+    }
+
     -- Debugging
     use {
           "mfussenegger/nvim-dap",
           requires = {
             "theHamsta/nvim-dap-virtual-text",
-            "rcarriga/nvim-dap-ui",
+             "rcarriga/nvim-dap-ui",
+             "nvim-telescope/telescope-dap.nvim",
           },
           config = function()
-            require("plugins.dap").setup()
+            require("plugins.dap.nvim-dap")
           end,
     }
+
     -- Debug plugin for python
-    -- use {
-    --    'mfussenegger/nvim-dap-python',
-    --    config = function()
-    --        require('plugins.dap.dap-python')
-    --    end
-    -- }
+    use {
+       'mfussenegger/nvim-dap-python',
+       config = function()
+           require('plugins.dap.dap-python')
+       end
+    }
 
     -- Commenter
     use {
@@ -74,7 +83,7 @@ return require('packer').startup(
 
     -- Luasnip
     use {
-        "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*",
+        "L3MON4D3/LuaSnip",
         config = function() require('plugins.snippets') end
     }
     -- git commands
@@ -86,12 +95,6 @@ return require('packer').startup(
     -- Color schema
     use 'folke/tokyonight.nvim'
 
-    --Telescope
-    use {
-      'nvim-telescope/telescope.nvim',
-      requires = {{'nvim-lua/plenary.nvim'}},
-      config = function() require('plugins.telescope') end
-    }
 
     use {
       "AckslD/nvim-neoclip.lua",

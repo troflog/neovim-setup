@@ -11,7 +11,6 @@ local cmp = require'cmp'
 cmp.setup({
      -- Don't preselect an option
     preselect = cmp.PreselectMode.None,
-  
     --Snippet engine
     snippet = {
       expand = function(args)
@@ -24,10 +23,8 @@ cmp.setup({
       -- documentation = cmp.config.window.bordered(),
     },
     mapping ={
-
         -- Close autocomplete
         ['<C-c>'] = cmp.mapping.close(),
-        
         -- Scroll documentation
         ['<C-d>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -60,12 +57,12 @@ cmp.setup({
             fallback()
           end
         end, { "i", "s" }),
-    }, 
+    },
 
 
     sources = {
         { name = 'nvim_lsp' },
-        { name = 'luasnip' }, 
+        { name = 'luasnip' },
         { name = 'buffer' },
         { name = 'path' }
     }
@@ -75,5 +72,9 @@ cmp.setup({
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 --Python
 require('lspconfig')['pyright'].setup{
+    capabilities = capabilities
+}
+--Lua
+require('lspconfig')['sumneko_lua'].setup{
     capabilities = capabilities
 }
