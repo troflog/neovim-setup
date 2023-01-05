@@ -28,6 +28,9 @@ return require('packer').startup(
         'neovim/nvim-lspconfig',
         config = function() require('plugins.lspconfig') end
     }
+    use ({
+        'yamatsum/nvim-nonicons'
+    })
     --Autocomplete
     use({
         "hrsh7th/nvim-cmp",
