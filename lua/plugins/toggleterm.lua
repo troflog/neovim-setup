@@ -12,11 +12,13 @@ return {
                       return vim.o.columns * 0.4
                     end
                   end,
-                  open_mapping = "<Leader>t"
+                  open_mapping = "<C-ø>"
                 })
      end,
      init = function()
         function _G.set_terminal_keymaps()
+          --#vim.keymap.set("n",'<leader>t', '<Cmd>execute v:count . "ToggleTerm"<CR>', {desc = "Toggle Terminal",silent = true})
+          --#vim.keymap.set("t",'<leader>t', "<Esc><Cmd>ToggleTerm<CR>", {desc = "Toggle Terminal",silent = true,})
           local opts = {buffer = 0}  --buffer =0 means current buffer
           vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
           --vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
