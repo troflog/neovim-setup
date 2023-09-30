@@ -32,3 +32,12 @@ vim.keymap.set("n", "<leader>\\" , "<C-W>v", { desc = "Split window right", rema
 
 -- Paste from the * register 
 vim.keymap.set("n","ø",'"*p',{})
+vim.keymap.set("n","æ",'"*p',{})
+
+--Paste remaps
+-- Delete into black hole register then paste (keep the pasted text in " registger)
+vim.keymap.set("x", "ø", [["_dP]])
+-- Copy into system clipboard
+vim.keymap.set({"n", "v"},"<leader>æ", [["*y]])
+--Copy from system clipboard
+vim.keymap.set("n", "æ", [["*p]])
