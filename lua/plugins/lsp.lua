@@ -84,7 +84,10 @@ return {
           },
         },
       }
-
+--diagnostics = {
+--        -- Get the language server to recognize the `vim` global
+--        globals = {'vim'},
+--      },
       -- Setup neovim lua configuration
       require('neodev').setup()
 

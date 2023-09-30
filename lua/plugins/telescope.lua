@@ -1,4 +1,3 @@
-
 return {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
@@ -19,7 +18,6 @@ return {
       },
     },
    keys = {
---      {"<leader>ff", require('telescope.builtin').find_files,                desc = "Find Files"},
         {"<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>", desc = "Find Files"},
       },
     config = function()
