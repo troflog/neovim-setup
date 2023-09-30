@@ -18,7 +18,15 @@ return {
       },
     },
    keys = {
-        {"<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>", desc = "Find Files"},
+        -- find
+        { "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>", desc = "Find Files"},
+        { "<leader>fb", "<cmd>Telescope buffers<cr>",                             desc = "Buffers"   },
+        { "<leader>fr", "<cmd>Telescope oldfiles<cr>",                            desc = "Recent"    },
+        -- git
+        { "<leader>gc", "<cmd>Telescope git_commits<CR>",                         desc = "Commits"   },
+        { "<leader>gs", "<cmd>Telescope git_status<CR>",                          desc = "Status"    },
+        -- search
+
       },
     config = function()
         require('telescope').setup {

@@ -29,3 +29,6 @@ vim.keymap.set("n", "<leader>w-" , "<C-W>s", { desc = "Split window below", rema
 vim.keymap.set("n", "<leader>w\\", "<C-W>v", { desc = "Split window right", remap = true })
 vim.keymap.set("n", "<leader>-"  , "<C-W>s", { desc = "Split window below", remap = true })
 vim.keymap.set("n", "<leader>\\" , "<C-W>v", { desc = "Split window right", remap = true })
+
+-- Paste from the * register 
+vim.keymap.set("n","ø",'"*p',{})
