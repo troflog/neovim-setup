@@ -19,25 +19,35 @@ return {
     },
    keys = {
         --Telescope
-        { "<leader>fa", "<cmd>Telescope<cr>",                                     desc = "Open Telescope"},
+        { "<leader>fa", "<cmd>Telescope<cr>",                                     desc = "Open Telescope"  },
         -- find
-        { "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>", desc = "Find Files"    },
-        { "<leader>fb", "<cmd>Telescope buffers<cr>",                             desc = "Buffers"       },
-        { "<leader>fr", "<cmd>Telescope oldfiles<cr>",                            desc = "Recent"        },
+        { "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>", desc = "Find Files"      },
+        { "<leader>fb", "<cmd>Telescope buffers<cr>",                             desc = "Buffers"         },
+        { "<leader>fr", "<cmd>Telescope oldfiles<cr>",                            desc = "Recent"          },
         -- git
-        { "<leader>gc", "<cmd>Telescope git_commits<CR>",                         desc = "Commits"       },
-        { "<leader>gs", "<cmd>Telescope git_status<CR>",                          desc = "Status"        },
+        { "<leader>gc", "<cmd>Telescope git_commits<CR>",                         desc = "Commits"         },
+        { "<leader>gs", "<cmd>Telescope git_status<CR>",                          desc = "Status"          },
         -- search
-
+        { "<leader>sg","<cmd>Telescope live_grep<cr>",                            desc = "Grep"            },
+        { '<leader>sr', "<cmd>Telescope registers<cr>"                          , desc = "Registers"       },
+        { "<leader>sb", "<cmd>Telescope current_buffer_fuzzy_find<cr>"          , desc = "Buffer"         },
+        { "<leader>sc", "<cmd>Telescope command_history<cr>"                    , desc = "Command History" },
+        { "<leader>sC", "<cmd>Telescope commands<cr>"                           , desc = "Commands" }       ,
+        { "<leader>sh", "<cmd>Telescope help_tags<cr>"                          , desc = "Help Pages" }     ,
+        { "<leader>sk", "<cmd>Telescope keymaps<cr>"                            , desc = "Key Maps" }       ,
+        { "<leader>sM", "<cmd>Telescope man_pages<cr>"                          , desc = "Man Pages" }      ,
+        { "<leader>so", "<cmd>Telescope vim_options<cr>"                        , desc = "Options" }        ,
       },
     config = function()
+        local actions = require("telescope.actions")
         require('telescope').setup {
           defaults = {
             mappings = {
               i = {
                 ['<C-u>'] = false,
                 ['<C-d>'] = false,
-              },
+                ["<esc>"] = actions.close,
+                },
             },
           },
         }
