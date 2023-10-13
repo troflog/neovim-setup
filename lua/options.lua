@@ -1,6 +1,9 @@
 local opt = vim.opt
 
 --Set color scheme
+
+vim.g.tokyonight_colors = {border = "white"}
+vim.g.tokyonight_style = 'storm'
 vim.cmd("colorscheme tokyonight-night")
 
 --Options
