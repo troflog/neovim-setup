@@ -19,10 +19,15 @@ vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
 vim.keymap.set("n", "<leader>qb", "<cmd>q<cr>", { desc = "Quit buffer" })
 
 -- Move around windows (shifted to the right)
-vim.keymap.set("n","<C-h>", "<C-w>h",options)
-vim.keymap.set("n","<C-j>", "<C-w>j",options)
-vim.keymap.set("n","<C-k>", "<C-w>k",options)
-vim.keymap.set("n","<C-l>", "<C-w>l",options)
+-- vim.keymap.set("n","<C-h>", "<C-w>h",options)
+-- vim.keymap.set("n","<C-j>", "<C-w>j",options)
+-- vim.keymap.set("n","<C-k>", "<C-w>k",options)
+-- vim.keymap.set("n","<C-l>", "<C-w>l",options)
+
+vim.keymap.set("n","<C-h>",  "<cmd>NavigatorLeft<cr>" )
+vim.keymap.set("n","<C-j>",  "<cmd>NavigatorDown<cr>" )
+vim.keymap.set("n","<C-k>",  "<cmd>NavigatorUp<cr>"   )
+vim.keymap.set("n","<C-l>",  "<cmd>NavigatorRight<cr>")
 
 -- Resize with arrows
 vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", options)
