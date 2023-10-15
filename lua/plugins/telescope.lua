@@ -21,7 +21,7 @@ return {
         --Telescope
         { "<leader>fa", "<cmd>Telescope<cr>",                                     desc = "Open Telescope"  },
         -- find
-        { "<leader>ff", "<cmd> telescope find_files hidden=true<cr>", desc = "Find Files"      },
+        { "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>", desc = "Find Files"      },
         { "<leader>fb", "<cmd>Telescope buffers<cr>",                             desc = "Buffers"         },
         { "<leader>fr", "<cmd>Telescope oldfiles<cr>",                            desc = "Recent"          },
         -- git
@@ -42,6 +42,9 @@ return {
         local actions = require("telescope.actions")
         require('telescope').setup {
           defaults = {
+            file_ignore_patterns = {
+                 "node_modules", "build",".git", "dist", "yarn.lock"
+            },
             mappings = {
               i = {
                 ['<C-u>'] = false,
