@@ -21,7 +21,7 @@ return {
         --Telescope
         { "<leader>fa", "<cmd>Telescope<cr>",                                     desc = "Open Telescope"  },
         -- find
-        { "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>", desc = "Find Files"      },
+        { "<leader>ff", "<cmd> telescope find_files hidden=true<cr>", desc = "Find Files"      },
         { "<leader>fb", "<cmd>Telescope buffers<cr>",                             desc = "Buffers"         },
         { "<leader>fr", "<cmd>Telescope oldfiles<cr>",                            desc = "Recent"          },
         -- git
