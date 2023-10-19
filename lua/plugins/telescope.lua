@@ -7,6 +7,7 @@ return {
       -- Fuzzy Finder Algorithm which requires local dependencies to be built.
       -- Only load if `make` is available. Make sure you have the system
       -- requirements installed.
+      'nvim-tree/nvim-web-devicons',
       {
         'nvim-telescope/telescope-fzf-native.nvim',
         -- NOTE: If you are having trouble with this installation,
@@ -21,7 +22,8 @@ return {
         --Telescope
         { "<leader>fa", "<cmd>Telescope<cr>",                                     desc = "Open Telescope"  },
         -- find
-        { "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>", desc = "Find Files"      },
+        { "<leader>ff", "<cmd>Telescope find_files <cr>",                         desc = "Find Files"      },
+        { "<leader>fh", "<cmd>Telescope find_files hidden=true<cr>",              desc = "Find All Files"      },
         { "<leader>fb", "<cmd>Telescope buffers<cr>",                             desc = "Buffers"         },
         { "<leader>fr", "<cmd>Telescope oldfiles<cr>",                            desc = "Recent"          },
         -- git
@@ -43,7 +45,7 @@ return {
         require('telescope').setup {
           defaults = {
             file_ignore_patterns = {
-                 "node_modules", "build",".git", "dist", "yarn.lock"
+                 "node_modules",".npm", "build",".git", "dist", "yarn.lock"
             },
             mappings = {
               i = {
