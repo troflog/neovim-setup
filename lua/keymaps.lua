@@ -49,5 +49,8 @@ vim.keymap.set("n","ø",'"*p',{})
 -- Delete into black hole register then paste (keep the pasted text in " registger)
 vim.keymap.set("x", "ø", [["_dP]])
 -- Copy into system clipboard
--- vim.keymap.set({"n", "v"},"<leader>æ", [["*y]])
+
+
+
+
 

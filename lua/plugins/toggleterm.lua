@@ -16,6 +16,12 @@ return {
                   --';
                 })
      end,
+     keys ={
+
+          {"<leader>tl",                 "<cmd>ToggleTermSendCurrentLine<cr>",        desc = "[T]Term Send current line"  },
+          { mode={"n","v"},"<leader>tv", "<cmd>ToggleTermSendVisualLines<cr>",        desc = "[T]Term Send lines in selction"  },
+          { mode={"n","v"},"<leader>tj", "<cmd>ToggleTermSendVisualSelection<cr>",     desc = "[T]Term Send visual selction "  },
+     },
      init = function()
         function _G.set_terminal_keymaps()
           --#vim.keymap.set("n",'<leader>t', '<Cmd>execute v:count . "ToggleTerm"<CR>', {desc = "Toggle Terminal",silent = true})
