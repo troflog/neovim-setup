@@ -20,12 +20,11 @@ return {
     },
    keys = {
         --Telescope
-        { "<leader>fa", "<cmd>Telescope<cr>",                                     desc = "Open Telescope"  },
-        -- find
-        { "<leader>ff", "<cmd>Telescope find_files <cr>",                         desc = "Find Files"      },
-        { "<leader>fh", "<cmd>Telescope find_files hidden=true<cr>",              desc = "Find All Files"      },
-        { "<leader>fb", "<cmd>Telescope buffers<cr>",                             desc = "Buffers"         },
-        { "<leader>fr", "<cmd>Telescope oldfiles<cr>",                            desc = "Recent"          },
+        { "<leader>fp", "<cmd>Telescope<cr>",                                     desc = "[F]ind [P]ickers"  },
+        { "<leader>ff", "<cmd>Telescope find_files <cr>",                         desc = "[F]ind [F]iles"      },
+        { "<leader>fh", "<cmd>Telescope find_files hidden=true<cr>",              desc = "[F]ind [H]idden Files"      },
+        { "<leader>fb", "<cmd>Telescope buffers<cr>",                             desc = "[F]ind [B]uffers"         },
+        { "<leader>fr", "<cmd>Telescope oldfiles<cr>",                            desc = "[F]ind [R]ecent"          },
         -- git
         { "<leader>gc", "<cmd>Telescope git_commits<CR>",                         desc = "Commits"         },
         { "<leader>gs", "<cmd>Telescope git_status<CR>",                          desc = "Status"          },

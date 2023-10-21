@@ -23,6 +23,7 @@ vim.keymap.set("n", "<leader>qb", "<cmd>q<cr>", { desc = "Quit buffer" })
 -- vim.keymap.set("n","<C-j>", "<C-w>j",options)
 -- vim.keymap.set("n","<C-k>", "<C-w>k",options)
 -- vim.keymap.set("n","<C-l>", "<C-w>l",options)
+--Globals
 
 vim.keymap.set("n","<C-h>",  "<cmd>NavigatorLeft<cr>" )
 vim.keymap.set("n","<C-j>",  "<cmd>NavigatorDown<cr>" )
@@ -51,6 +52,13 @@ vim.keymap.set("x", "ø", [["_dP]])
 -- Copy into system clipboard
 
 
-
-
-
+-- document existing key chains
+require('which-key').register({
+  ['<leader>f'] = { name = '[F]ind', _ = 'which_key_ignore' },
+  -- ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
+  -- ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
+  -- ['<leader>h'] = { name = 'More git', _ = 'which_key_ignore' },
+  -- ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
+  -- ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
+  -- ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+})
