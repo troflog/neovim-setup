@@ -46,11 +46,12 @@ vim.keymap.set("n", "<leader>\\" , "<C-W>v", { desc = "Split window right", rema
 
 --Paste remaps--
 -- Paste from the * register 
-vim.keymap.set("n","ø",'"*p',{})
+vim.keymap.set("n","ø",'"*p',{desc = "Paste from the * register"})
 -- Delete into black hole register then paste (keep the pasted text in " registger)
-vim.keymap.set("x", "ø", [["_dP]])
--- Copy into system clipboard
+vim.keymap.set("x", "ø", [["_dP]],{desc = "Delete and paste (visual mode)"})
 
+--Naviagate help file
+vim.keymap.set("n","<å>","<C-]>")
 
 -- document existing key chains
 require('which-key').register({
