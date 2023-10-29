@@ -51,7 +51,7 @@ vim.keymap.set("n","ø",'"*p',{desc = "Paste from the * register"})
 vim.keymap.set("x", "ø", [["_dP]],{desc = "Delete and paste (visual mode)"})
 
 --Naviagate help file
-vim.keymap.set("n","<å>","<C-]>")
+vim.keymap.set("n","å","<C-]>")
 
 -- document existing key chains
 require('which-key').register({

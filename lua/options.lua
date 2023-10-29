@@ -1,13 +1,11 @@
-local opt = vim.opt
-
 --Set color scheme
 vim.cmd("colorscheme tokyonight-night")
 
 --Options
 vim.o.termguicolors = true        -- True colors
 vim.o.expandtab = true            -- Use spaces instead of tabs
-vim.o.tabstop = 4                 -- size of <tab> measured in spaces 
-vim.o.shiftwidth = 4              -- size of an indent, 4 spaces to match <tab>
+-- vim.o.tabstop = 4                 -- size of <tab> measured in spaces 
+-- vim.o.shiftwidth = 4              -- size of an indent, 4 spaces to match <tab>
 vim.o.hidden = true               -- Enable background buffers
 vim.o.autoindent = true           -- Copy indent from curretn line when staring a new line
 vim.o.ignorecase = true           -- Ignore case
@@ -20,9 +18,14 @@ vim.o.splitbelow = true           -- force all horizontal splits to go below cur
 vim.o.termguicolors = true        -- set term gui true colors (most terminals support this)
 vim.o.hlsearch = false            -- Set highlight on search
 vim.o.undofile = true             -- Save undo history
---Local to window options
+vim.o.listchars='space:·,tab:->\\,trail:-,nbsp:+'
 vim.wo.wrap = false             -- Turn off line wrapping
+--Local to window options
 
+-- Set = vim.opt
+-- Let = vim.g
+--
+-- Let.pyindent_open_paren = Set.shiftwidth
 -- Enable break indent
 vim.o.breakindent = true
 
