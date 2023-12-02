@@ -24,7 +24,11 @@ vim.keymap.set("n", "<leader>qb", "<cmd>q<cr>", { desc = "Quit buffer" })
 -- vim.keymap.set("n","<C-k>", "<C-w>k",options)
 -- vim.keymap.set("n","<C-l>", "<C-w>l",options)
 --Globals
+--Center the cursor when moving with Ctrl-D and Ctrl-U
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
+--Easy navigation with Ctrl-hjkl
 vim.keymap.set("n","<C-h>",  "<cmd>NavigatorLeft<cr>" )
 vim.keymap.set("n","<C-j>",  "<cmd>NavigatorDown<cr>" )
 vim.keymap.set("n","<C-k>",  "<cmd>NavigatorUp<cr>"   )
