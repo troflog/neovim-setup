@@ -40,6 +40,7 @@ return {
         { "<leader>so", "<cmd>Telescope vim_options<cr>"                        , desc = "Search Options" }        ,
       },
     config = function()
+        --Comment
         local actions = require("telescope.actions")
         require('telescope').setup {
           defaults = {
