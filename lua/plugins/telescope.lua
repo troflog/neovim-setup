@@ -45,7 +45,7 @@ return {
         require('telescope').setup {
           defaults = {
             file_ignore_patterns = {
-                 "node_modules",".npm", "build",".git", "dist", "yarn.lock"
+                 "node_modules",".npm", "build",".git", "yarn.lock"
             },
             mappings = {
               i = {

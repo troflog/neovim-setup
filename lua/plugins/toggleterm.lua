@@ -17,10 +17,10 @@ return {
                 })
      end,
      keys ={
-          {                "<leader>tl", "<cmd>ToggleTermSendCurrentLine<cr>",        desc = "Term send current line"  },
+          { mode={"n"},    "<leader>tl", "<cmd>ToggleTermSendCurrentLine<cr>",        desc = "Term send current line"  },
           { mode={"n","v"},"<leader>tk", "<cmd>ToggleTermSendVisualSelection<cr>",    desc = "Term send visual selction "  },
           { mode={"n","v"},"<leader>tj", "<cmd>ToggleTermSendVisualLines<cr>",        desc = "Term send lines in selction"  },
-          { mode={"n","v"},"<leader>tt", "<cmd>TermExec cmd='\\%run %'<cr>",           desc = "Term send lines in selction"  },
+          { mode={"n"},    "<leader>tt", "<cmd>TermExec cmd='\\%run %'<cr>",          desc = "Term run file in IPython"  },
      },
      init = function()
         function _G.set_terminal_keymaps()
