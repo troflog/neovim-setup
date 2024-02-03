@@ -13,6 +13,8 @@ return
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
       'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path'
+      
     },
     config = function ()
 
@@ -62,6 +64,7 @@ return
             { name = 'nvim_lsp' },
             { name = 'luasnip' },
             { name = 'buffer' },
+            { name = 'path' },
           },
         }
 
