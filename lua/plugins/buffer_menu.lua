@@ -7,7 +7,7 @@
       lazy= false,
       -- keys = {
       --      --Telescope
-      --       -- { "<leader>b","<cmd> lua require('buffer_manager.ui').toggle_quick_menu()<CR>"   },
+      --       -- { "<leader><leader>","<cmd> lua require('buffer_manager.ui').toggle_quick_menu()<CR>"   },
       -- },
       config = function()
             local map = vim.keymap.set

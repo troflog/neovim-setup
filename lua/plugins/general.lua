@@ -11,8 +11,18 @@ return {
     'folke/which-key.nvim',
     opts = {}
   },
-  -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+  --TODO asdfas
+  { 'folke/todo-comments.nvim', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { } },
+  --Highlight todo, notes, etc in comments
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+  },
 
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
@@ -61,9 +71,7 @@ return {
         },
       },
     },
-  },
-
-  -- Add indentation guides even on blank lines
+  }, -- Add indentation guides even on blank lines
   {
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
