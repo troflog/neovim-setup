@@ -6,7 +6,7 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set("i","jk","<Esc>",options)
 vim.keymap.set("i","JK","<Esc>",options)
 
--- Keymaps for better default experience
+-- Keymapsf for better default experience
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
@@ -77,7 +77,7 @@ vim.keymap.set("n","ø",'"*p',{desc = "Paste from the * register"})
 vim.keymap.set("x", "ø", [["_dP]],{desc = "Delete and paste (visual mode)"})
 
 --Naviagate help file
-vim.keymap.set("n","å","<C-]>")
+vim.keymap.set("n","å","<C-]>",{noremap=true,desc = "Go to section under cursor in help file"})
 
 -- document existing key chains
 require('which-key').register({

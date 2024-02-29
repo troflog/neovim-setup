@@ -14,7 +14,10 @@ return {
            vim.cmd "quit"
          end
        end
-    })
+      })
+
+  -- vim.keymap.set('n', '<C-]>',   api.tree.change_root_to_node,        opts('CD'))
+    -- vim.keymap.set("n","å","<C-]>",{noremap = true,desc = "Change root to node"})
   end,
   keys ={
     { mode={"n","v"},"<C-b>", "<cmd>NvimTreeToggle<cr>",    desc = "ToggleTerm"  },
