@@ -11,6 +11,29 @@ return {
     'folke/which-key.nvim',
     opts = {}
   },
+  -- Highlight todo, notes, etc in comments
+  { 'folke/todo-comments.nvim', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+
+  { -- Collection of various small independent plugins/modules
+    'echasnovski/mini.nvim',
+    config = function()
+      -- Better Around/Inside textobjects
+      --
+      -- Examples:
+      --  - va)  - [V]isually select [A]round [)]parenthen
+      --  - yinq - [Y]ank [I]nside [N]ext [']quote
+      --  - ci'  - [C]hange [I]nside [']quote
+      --  'asdfsad'
+      require('mini.ai').setup { n_lines = 500 }
+
+      -- Add/delete/replace surroundings (brackets, quotes, etc.)
+      --
+      -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
+      -- - sd'   - [S]urround [D]elete [']quotes
+      -- - sr)'  - [S]urround [R]eplace [)] [']
+      require('mini.surround').setup()
+    end,
+  },
 
   -- Set lualine as statusline
   {
@@ -27,9 +50,9 @@ return {
         lualine_c = {
           {
             'filename',
-            file_status = true,       -- Displays file status (readonly status, modified status)
-            newfile_status = false,   -- Display new file status (new file means no write after created)
-            path = 2                  -- 1: Just the filename
+            file_status = true,     -- Displays file status (readonly status, modified status)
+            newfile_status = false, -- Display new file status (new file means no write after created)
+            path = 2                -- 1: Just the filename
             -- 1: Relative path
             -- 2: Absolute path
             -- 3: Absolute path, with tilde as the home directory
@@ -48,7 +71,13 @@ return {
     main = "ibl",
     opts = {},
   },
-
+  -- Markdown preview
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+  },
   -- "gc" to comment visual regions/lines
   {
     'numToStr/Comment.nvim',
