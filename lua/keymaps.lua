@@ -70,11 +70,16 @@ vim.keymap.set("n", "<leader>w\\", "<C-W>v", { desc = "Split window right", rema
 vim.keymap.set("n", "<leader>-"  , "<C-W>s", { desc = "Split window below", remap = true })
 vim.keymap.set("n", "<leader>\\" , "<C-W>v", { desc = "Split window right", remap = true })
 
---Paste remaps--
+-- Copy and paste remaps
+-- Delete into black hole register then paste (keep the pasted text in " registger)
+vim.keymap.set("x", "ø", [["_dP]],{desc = "Delete to black hole and paste (visual mode)"})
+-- Yank into the into the selection register
+vim.keymap.set({"n","x"}, "<leader>y", [["*y]],{ desc="Yank into selectio register (normal and visual mode *" })
 -- Paste from the * register 
 vim.keymap.set("n","ø",'"*p',{desc = "Paste from the * register"})
--- Delete into black hole register then paste (keep the pasted text in " registger)
-vim.keymap.set("x", "ø", [["_dP]],{desc = "Delete and paste (visual mode)"})
+-- delete into black hole registrer
+vim.keymap.set({"n","x"}, "<leader>d", [["_d]],{ desc="Delete to black hole register" })
+vim.keymap.set({"n","x"}, "<leader>x", [["_x]],{ desc="Delete to black hole register" })
 
 --Naviagate help file
 vim.keymap.set("n","å","<C-]>",{noremap=true,desc = "Go to section under cursor in help file"})

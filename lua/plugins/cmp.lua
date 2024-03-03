@@ -16,6 +16,7 @@ return
         return 'make install_jsregexp'
       end)(),
     },
+    -- Luasnip autocomplete
     'saadparwaiz1/cmp_luasnip',
 
     -- Adds LSP completion capabilities
@@ -33,6 +34,8 @@ return
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
     require('luasnip.loaders.from_vscode').lazy_load()
+    -- load snippets from path/of/your/nvim/config/my-cool-snippets
+    -- require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./.config/nvim/snippets/my-snippets" } })
     luasnip.config.setup {}
 
     cmp.setup {
