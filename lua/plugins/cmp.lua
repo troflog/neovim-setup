@@ -15,6 +15,10 @@ return
         end
         return 'make install_jsregexp'
       end)(),
+      dependencies = {
+        -- Adds a number of user-friendly snippets
+        'rafamadriz/friendly-snippets',
+      }
     },
     -- Luasnip autocomplete
     'saadparwaiz1/cmp_luasnip',
@@ -22,8 +26,6 @@ return
     -- Adds LSP completion capabilities
     'hrsh7th/cmp-nvim-lsp',
 
-    -- Adds a number of user-friendly snippets
-    'rafamadriz/friendly-snippets',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path'
 
@@ -33,10 +35,25 @@ return
     -- See `:help cmp`
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
-    require('luasnip.loaders.from_vscode').lazy_load()
+    --Change luasnip choice
+    vim.keymap.set({ "i", "s" }, "<C-l>", function()
+      if luasnip.choice_active() then
+        luasnip.change_choice(1)
+      end
+    end, { silent = true })
+
+
+    luasnip.config.setup()
+    require("luasnip.loaders.from_vscode").lazy_load()
     -- load snippets from path/of/your/nvim/config/my-cool-snippets
-    -- require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./.config/nvim/snippets/my-snippets" } })
-    luasnip.config.setup {}
+    -- require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./my-snippets/" } })
+    -- require('luasnip.loaders.from_vscode').lazy_load()
+
+    local has_words_before = function()
+      unpack = unpack or table.unpack
+      local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+      return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+    end
 
     cmp.setup {
       snippet = {
@@ -45,8 +62,8 @@ return
         end,
       },
       mapping = cmp.mapping.preset.insert {
-        ['<C-n>'] = cmp.mapping.select_next_item(),
-        ['<C-p>'] = cmp.mapping.select_prev_item(),
+        -- ['<C-n>'] = cmp.mapping.select_next_item(),
+        -- ['<C-p>'] = cmp.mapping.select_prev_item(),
         ['<C-d>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete {},
@@ -59,6 +76,8 @@ return
             cmp.select_next_item()
           elseif luasnip.expand_or_locally_jumpable() then
             luasnip.expand_or_jump()
+          elseif has_words_before() then
+            cmp.complete()
           else
             fallback()
           end

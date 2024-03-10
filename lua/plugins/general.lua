@@ -12,7 +12,7 @@ return {
     opts = {}
   },
   --TODO asdfas
-  { 'folke/todo-comments.nvim', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { } },
+  { 'folke/todo-comments.nvim', dependencies = { 'nvim-lua/plenary.nvim' }, opts = {} },
   --Highlight todo, notes, etc in comments
   {
     "folke/trouble.nvim",
@@ -33,7 +33,7 @@ return {
       --  - va)  - [V]isually select [A]round [)]parenthen
       --  - yinq - [Y]ank [I]nside [N]ext [']quote
       --  - ci'  - [C]hange [I]nside [']quote
-      --  'asdfsad'
+      --  'geir'
       require('mini.ai').setup { n_lines = 500 }
 
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
@@ -44,7 +44,13 @@ return {
       require('mini.surround').setup()
     end,
   },
-
+  --Automatically make gitignore
+  {
+    "wintermute-cell/gitignore.nvim",
+    config = function()
+      require('gitignore')
+    end,
+  },
   -- Set lualine as statusline
   {
     'nvim-lualine/lualine.nvim',

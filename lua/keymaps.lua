@@ -1,10 +1,10 @@
 -- Keymaps for better default experience
-local options = {noremap = true}
+local options = { noremap = true }
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Map jk/JK to Esc
-vim.keymap.set("i","jk","<Esc>",options)
-vim.keymap.set("i","JK","<Esc>",options)
+vim.keymap.set("i", "jk", "<Esc>", options)
+vim.keymap.set("i", "JK", "<Esc>", options)
 
 -- Keymapsf for better default experience
 -- See `:help vim.keymap.set()`
@@ -63,26 +63,26 @@ vim.keymap.set('n', '<leader><leader>l', require('smart-splits').swap_buf_right)
 -- vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", options)
 
 -- Make splits with leder
-vim.keymap.set("n", "<leader>ww" , "<C-W>p", { desc = "Other window"      , remap = true })
-vim.keymap.set("n", "<leader>wd" , "<C-W>c", { desc = "Delete window"     , remap = true })
-vim.keymap.set("n", "<leader>w-" , "<C-W>s", { desc = "Split window below", remap = true })
+vim.keymap.set("n", "<leader>ww", "<C-W>p", { desc = "Other window", remap = true })
+vim.keymap.set("n", "<leader>wd", "<C-W>c", { desc = "Delete window", remap = true })
+vim.keymap.set("n", "<leader>w-", "<C-W>s", { desc = "Split window below", remap = true })
 vim.keymap.set("n", "<leader>w\\", "<C-W>v", { desc = "Split window right", remap = true })
-vim.keymap.set("n", "<leader>-"  , "<C-W>s", { desc = "Split window below", remap = true })
-vim.keymap.set("n", "<leader>\\" , "<C-W>v", { desc = "Split window right", remap = true })
+vim.keymap.set("n", "<leader>-", "<C-W>s", { desc = "Split window below", remap = true })
+vim.keymap.set("n", "<leader>\\", "<C-W>v", { desc = "Split window right", remap = true })
 
 -- Copy and paste remaps
 -- Delete into black hole register then paste (keep the pasted text in " registger)
-vim.keymap.set("x", "ø", [["_dP]],{desc = "Delete to black hole and paste (visual mode)"})
+vim.keymap.set("x", "ø", [["_dP]], { desc = "Delete to black hole and paste (visual mode)" })
 -- Yank into the into the selection register
-vim.keymap.set({"n","x"}, "<leader>y", [["*y]],{ desc="Yank into selectio register (normal and visual mode *" })
--- Paste from the * register 
-vim.keymap.set("n","ø",'"*p',{desc = "Paste from the * register"})
+vim.keymap.set({ "n", "x" }, "<leader>y", [["*y]], { desc = "Yank into selectio register (normal and visual mode *" })
+-- Paste from the * register
+vim.keymap.set("n", "ø", '"*p', { desc = "Paste from the * register" })
 -- delete into black hole registrer
-vim.keymap.set({"n","x"}, "<leader>d", [["_d]],{ desc="Delete to black hole register" })
-vim.keymap.set({"n","x"}, "<leader>x", [["_x]],{ desc="Delete to black hole register" })
+vim.keymap.set({ "n", "x" }, "<leader>d", [["_d]], { desc = "Delete to black hole register" })
+vim.keymap.set({ "n", "x" }, "<leader>x", [["_x]], { desc = "Delete to black hole register" })
 
 --Naviagate help file
-vim.keymap.set("n","å","<C-]>",{noremap=true,desc = "Go to section under cursor in help file"})
+vim.keymap.set("n", "å", "<C-]>", { noremap = true, desc = "Go to section under cursor in help file" })
 
 -- document existing key chains
 require('which-key').register({
