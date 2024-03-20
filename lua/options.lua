@@ -4,8 +4,8 @@ vim.cmd("colorscheme tokyonight-night")
 --Options
 vim.o.termguicolors = true        -- True colors
 vim.o.expandtab = true            -- Use spaces instead of tabs
--- vim.o.tabstop = 4                 -- size of <tab> measured in spaces 
--- vim.o.shiftwidth = 4              -- size of an indent, 4 spaces to match <tab>
+vim.o.tabstop = 4                 -- size of <tab> measured in spaces 
+vim.o.shiftwidth = 4              -- size of an indent, 4 spaces to match <tab>
 vim.o.hidden = true               -- Enable background buffers
 vim.o.autoindent = true           -- Copy indent from curretn line when staring a new line
 vim.o.ignorecase = true           -- Ignore case
